@@ -36,7 +36,9 @@ bandwidths, and the uplink is using frequency-hopping.
 Each symbol is either a reference or a data symbol. For regular downlink
 packets, the structure is:
 
+```
    RS0 | D | D | D | D | D | D | RS1 | D | D | D | D | D | D | RS0
+```
 
 (So 15 symbols total, Packet length is ~1ms)
 
