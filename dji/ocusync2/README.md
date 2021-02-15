@@ -50,3 +50,7 @@ generated in frequency domain, with a sequence length of 1201 (20MHz) or 601
 Data symbols are either QPSK or higher-order QAM. The first signal is always
 QPSK. The DC subcarrier (for example 600 for 20 MHz) is fixed and not used
 for data. There are no obvious pilots (or I haven't found them).
+
+DC subcarrier has an out-of-QPSK (i.e. non-multiple-of-90°) phase relationship to the rest of the bits. Experimentally it seems to be set at 20°+`x`*90° (when data bits are at 45°, 135°, 225°, 315°), but it is not clear what `x` is.
+
+[symbols.txt](Symbols) contains decoded bits for 100 Downlink frames, though only QPSK symbols. "." denote unavailable bits (for example from reference symbols), "?" denote unsure bits, likely because the symbol was not QPSK-modulated. "I" and "Q" refer to the real and imaginary part of the subcarrier, carrier 600 (these are 20MHz packets, so 1201 subcarriers per symbol) is set as a reference. As described above the absolute position of the reference carrier is not clear so the bits may be rotated.
